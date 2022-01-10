@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "name": "Prakash",
+      "email": "prakash19@gmail.com",
+      "country": "India",
+      "id": 4,
+      "dob": "1997-02-04",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C4D03AQE-PT98nAqnAA/profile-displayphoto-shrink_200_200/0/1610215176702?e=1646870400&v=beta&t=sCrNWcVNWDhx_P0klIAFTGWidgeCNIF2BFMBImKFpwM"
+    },
+    {
+      "name": "Gitesh Kumar",
+      "email": "gitesh@motorola.biz",
+      "dob": "2000-10-10",
+      "country": "IN",
+      "avatar": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+    },
+    {
+      "name": "Abhijeet Jawale",
+      "email": "abhi1@gmail.com",
+      "country": "india",
+      "id": 7,
+      "dob": "1996-02-12",
+      "age": null,
+      "avatar": "https://media-exp1.licdn.com/dms/image/D5603AQF75V8tctzqlg/profile-displayphoto-shrink_100_100/0/1631852542182?e=1646870400&v=beta&t=O7wMUA5F9u2cU9CgeDdVA8nwmawJnQgS0CqCBbC780o"
+    }
+  ]
+}

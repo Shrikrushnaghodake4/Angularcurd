@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand text-white" href="#">Angualr CRUD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+       <label class="text-white">Person Details</label>
+      </li>
+
+    </ul>
+    <button type="button" (click)="clickAddPerson()"  class="btn btn-success ml-3 my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Add Person</button>
+
+  </div>
+</nav>
+
+
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="card-deck col-md-4 " *ngFor = "let row of personData" >
+
+
+
+  <div class="card float-left mt-3"  style="width: 9rem;">
+    <img src="{{row.avatar}}" class="card-img-top" alt="..." href=""  >
+    <div class="card-body">
+     <p>Name: {{row.name}}</p>
+     <p>Email: {{row.email}}</p>
+     <p>Age: {{row.dob | date: 'dd/MM/yyyy' | age}}</p>
+     <!-- <p>Age: {{row.dob | age}}</p> -->
+     <p>Country: {{row.country}}</p>
+     <button type="submit" (click)="onEdit(row)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+     <button type="button" (click)="deletePerson(row)" class="btn btn-danger ml-3">Delete</button>
+    </div>
+  </div></div>
+
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Person Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]= "formValue">
+          <div class="row">
+
+          <div class="col-md-8">
+
+
+                <div class="form-group">
+                  <label >Name</label>
+                  <input class="form-control" formControlName="name" type="text" placeholder=" Person Name...">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email..">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">DOB</label>
+                  <input class="form-control" formControlName="dob" type="date" placeholder="Enter youe DOB">
+                </div>
+
+                <div class="form-group">
+                  <label >Country </label>
+                  <input class="form-control" formControlName="country" type="text" placeholder="Country Name">
+                </div>
+                <div class="form-group">
+                  <label >Avatar </label>
+                  <input class="form-control" formControlName="avatar" id="exampleInputavatar"  placeholder="Enter Link">
+
+                </div>
+
+              </div>
+              </div>
+             </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" *ngIf ="showAdd" class="btn btn-primary" (click)="postPersonDetails()" >Add </button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" *ngIf ="showUpdate" class="btn btn-primary" (click)="updatePersonDetails()">Update </button>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
